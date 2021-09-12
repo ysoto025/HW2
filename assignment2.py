@@ -35,9 +35,9 @@ class Assignment2:
     def listAnniversaries(self, n=0):
 
         result_list = []
-        aniversary = 0
+        aniversary = 1
 
-        while aniversary < self.age:
+        while aniversary <= self.age:
             if aniversary % n == 0:
                 result_list.append(aniversary)
             aniversary = aniversary + 1
