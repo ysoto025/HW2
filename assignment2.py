@@ -80,7 +80,8 @@ class Assignment2:
             while pos < len(string):
                 if isdigit(string[pos]):
                     return True
-                pos = pos + 1
+                else:
+                    pos = pos + 1
 
             return False
 
