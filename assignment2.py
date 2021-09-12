@@ -60,7 +60,7 @@ class Assignment2:
         pos = 0
         while pos < len(stringNth):
             if pos % 2 != 0:
-                returnString = returnString + stringNth[pos]
+                returnString = returnString + stringNth[pos-1]
             pos = pos + 1
 
         return returnString
