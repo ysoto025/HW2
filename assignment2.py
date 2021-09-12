@@ -26,7 +26,6 @@ class Assignment2:
 
     def tellBirthYear(self, currentYear=0):
 
-
         number = currentYear - self.age
         self.birthYear = str(number)
         print("Your birth year is {0}".format(self.birthYear))
@@ -36,7 +35,7 @@ class Assignment2:
     def listAnniversaries(self, n=0):
 
         result_list = []
-        aniversary = 1
+        aniversary = 0
 
         while aniversary < self.age:
             if aniversary % n == 0:
