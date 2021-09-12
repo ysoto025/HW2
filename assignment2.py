@@ -14,8 +14,6 @@ class Assignment2:
     n = 0
     host = ""
 
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
     # Task 1 (Constructor)
 
@@ -67,7 +65,7 @@ class Assignment2:
 
     # Task 5 (Loop and Conditional statements)
     @staticmethod
-    def checkGoodString(self, string=""):
+    def checkGoodString(string=""):
 
         if len(string) < 9:
             return False
@@ -83,16 +81,18 @@ class Assignment2:
 
     # Task 6 (Socket)
     @staticmethod
-    def connectTcp(self, host="", port=0):
+    def connectTcp(host="", port=0):
 
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         try:
-            self.host = socket.gethostbyname(host)
+            host = socket.gethostbyname(host)
             print("Good Host")
         except:
             print("Could not connect to host")
             return False
         try:
-            self.sock.connect((host, port))
+            sock.connect((host, port))
             return True
         except socket.error:
             return False
@@ -100,17 +100,15 @@ class Assignment2:
         self.sock.close()
 
 
-a = Assignment2(15)
-
 print("Task 5")
-ret = a.checkGoodString("Foobar0more")
+ret = Assignment2.checkGoodString("Foobar0more")
 print(ret)
 
-ret = a.checkGoodString("foobar0more")
+ret = Assignment2.checkGoodString("foobar0more")
 print(ret)
 
 print("Task 6")
-retval = a.connectTcp("www.google.com", 180)
+retval = Assignment2.connectTcp("www.google.com", 80)
 
 if retval:
     print("Connection established correctly")
