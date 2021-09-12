@@ -27,7 +27,7 @@ class Assignment2:
     def tellBirthYear(self, birthYear=0):
 
         self.birthYear = birthYear
-        birthYear = str(currentYear)
+        birthYear = str(birthYear)
         print("Your birth year is {0}!".format(self.birthYear))
 
     # Task 3 (List)
