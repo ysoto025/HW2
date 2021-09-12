@@ -55,6 +55,7 @@ class Assignment2:
 
         while pos < n:
             returnString = returnString + stringAge[0]
+            pos = pos + 1
 
         pos = 0
         while pos < len(stringNth):
