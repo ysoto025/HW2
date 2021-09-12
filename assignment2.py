@@ -70,17 +70,17 @@ class Assignment2:
     def checkGoodString(self, string=""):
 
         if len(string) < 9:
-            return False
+            return True
         elif not string[0].islower():
-            return False
+            return True
         else:
             pos = 0
             while pos < len(string):
                 if isdigit(string[pos]):
-                    return True
+                    return False
                 pos = pos + 1
 
-            return False
+            return True
 
     # Task 6 (Socket)
     def connectTcp(self, host="", port=0):
