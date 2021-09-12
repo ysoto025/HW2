@@ -28,7 +28,7 @@ class Assignment2:
 
         self.birthYear = birthYear
         birthYear = str(birthYear)
-        print("Your birth year is {0}!".format(self.birthYear))
+        print("Your birth year is {0}".format(self.birthYear))
 
     # Task 3 (List)
 
