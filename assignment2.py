@@ -24,10 +24,11 @@ class Assignment2:
 
     # Task 2 (birthYear)
 
-    def tellBirthYear(self, birthYear=0):
+    def tellBirthYear(self, currentYear=0):
 
-        self.birthYear = birthYear
-        birthYear = str(birthYear)
+
+        number = currentYear - self.age
+        self.birthYear = str(number)
         print("Your birth year is {0}\n".format(self.birthYear))
 
     # Task 3 (List)
