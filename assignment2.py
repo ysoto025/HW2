@@ -11,9 +11,7 @@ import argparse
 class Assignment2:
     age = 0
     currentYear = ""
-
     n = 0
-
     host = ""
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
