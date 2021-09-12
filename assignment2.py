@@ -69,15 +69,18 @@ class Assignment2:
 
     def checkGoodString(self, string=""):
 
-        if len(string) < 9 or (ord(string[0]) < 97 or ord(string[0]) > 122):
+        checkLower = string[0]
+
+        if len(string) < 9:
+            return False
+        elif checkLower.islower() == False:
             return False
         else:
             pos = 1
             while pos < len(string):
                 if isdigit(string[pos]):
                     return True
-                else:
-                    pos = pos + 1
+                pos = pos + 1
 
             return False
 
