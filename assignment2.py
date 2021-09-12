@@ -50,7 +50,7 @@ class Assignment2:
 
         pos = 0
         stringAge = str(self.age)
-        stringNth = str(self.age ** n)
+        stringNth = str(self.age**n)
         returnString = str(n * self.age)
 
         while pos < n:
