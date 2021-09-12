@@ -70,7 +70,7 @@ class Assignment2:
     def checkGoodString(self, string=""):
 
         if len(string) < 9 or string[0].islower():
-            return False
+            return false
         else:
             pos = 1
             while pos < len(string):
