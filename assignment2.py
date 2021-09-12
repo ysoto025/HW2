@@ -50,7 +50,7 @@ class Assignment2:
 
         pos = 0
         stringAge = str(self.age)
-        stringNth = str(self.age**n)
+        stringNth = str(self.age ** n)
         returnString = str(n * self.age)
 
         while pos < n:
@@ -60,7 +60,7 @@ class Assignment2:
         pos = 0
         while pos <= len(stringNth):
             if pos % 2 != 0:
-                returnString = returnString + stringNth[pos-1]
+                returnString = returnString + stringNth[pos - 1]
             pos = pos + 1
 
         return returnString
@@ -68,8 +68,6 @@ class Assignment2:
     # Task 5 (Loop and Conditional statements)
 
     def checkGoodString(self, string=""):
-
-
 
         if len(string) < 9:
             return False
@@ -80,8 +78,7 @@ class Assignment2:
             while pos < len(string):
                 if isdigit(string[pos]):
                     return True
-                else:
-                    pos = pos + 1
+                pos = pos + 1
 
             return False
 
@@ -101,4 +98,3 @@ class Assignment2:
             return False
 
         self.sock.close()
-
