@@ -7,118 +7,84 @@ import socket
 import sys
 import argparse
 
-class Assignment2:
 
+class Assignment2:
     age = 0
-    name = ""
-    list = []
+    currentYear = ""
+
+    n = 0
     modString = ""
     host = ""
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-# Task 1 (Constructor)
+    # Task 1 (Constructor)
 
-    def __init__(self, age = 0):
+    def __init__(self, age=0):
         self.age = age
 
-# Task 2 (sayWelcome)
+    # Task 2 (birthYear)
 
-    def sayWelcome(self, name = "User"):
+    def tellBirthYear(self, currentYear=0):
 
-        self.name = name
-        print("Welcome {0}!".format(self.name))
+        self.currentYear = currentYear
+        birthYear = str(currentYear)
+        print("Your birth year is {0}!".format(self.birthYear))
 
-# Task 3 (List)
+    # Task 3 (List)
 
-    def doubleList(self, list = []):
+    def listAnniversaries(self, n=0):
 
         result_list = []
-        pos = 0
+        aniversary = 1
 
-        while pos < len(list):
-            string = list[pos] + list[pos]
-            result_list.append(string)
+        while aniversary < len(self.age):
+            if aniversary % n == 0:
+                result_list.append(aniversary)
+            aniversary = aniversary + 1
+
+        return result_list
+
+    # Task 4 (String Manipulation)
+
+    def modifyAge(self, n=0):
+
+        pos = 0
+        stringAge = str(self.age)
+        stringNth = str(self.age ** n)
+        returnString = str(n * self.age)
+
+        while pos < n:
+            returnString = returnString + stringAge[0]
+
+        pos = 0
+        while pos < len(stringNth):
+            if int(stringNth[pos]) % 2 != 0:
+                returnString = returnString + stringNth[0]
             pos = pos + 1
 
-        pos = 0
-        while pos < len(list):
+        return returnString
 
-            if (pos + 1)%2 != 0:
-                result_list.append(list[pos])
-            pos = pos + 1
+    # Task 5 (Loop and Conditional statements)
 
-        pos = 0
-        while pos < len(list):
+    def checkGoodString(self, string=""):
 
-            if (pos + 1) % 2 == 0:
-                result_list.append(list[pos])
-            pos = pos + 1
-
-
-        self.list = result_list
-
-#Task 4 (String Manipulation)
-
-    def modifyString(self, string = ""):
-
-        pos = 0
-        help = ""
-        result = []
-        myString = string
-
-        while pos < len(string):
-
-            if (pos + 1) % 3 == 0 and ord(myString[pos]) >= 97 and ord(myString[pos]) <= 122:
-                result.append(chr(ord(myString[pos]) - 32))
-            elif (pos + 1) %  3 != 0 and (pos + 1) %  4 == 0 and ord(myString[pos]) >= 65 and ord(myString[pos]) <= 90:
-                result.append(chr(ord(myString[pos]) + 32))
-            elif (pos + 1) % 3 != 0 and (pos + 1) % 4 != 0 and (pos + 1) % 5 == 0:
-                result.append(chr(32))
-            else:
-                result.append(myString[pos])
-            pos = pos +1
-
-        for x in result:
-            help =  help + x
-
-        self.modSrting = help
-
-#Task 5 (Loop and Conditional statements)
-
-    def isGoodPassword(self, passw = ""):
-
-        upLet = 0
-        lowLet = 0
-        specLet = 0
-        num =  0
-
-        if len(passw) < 9:
-           return False
+        if len(string) < 9 or ord(string[0]) < 97 or ord(string[0]) > 122:
+            return False
         else:
-            pos = 0
-            while pos < len(passw):
+            pos = 1
 
-                if(ord(passw[pos]) >= 97 and ord(passw[pos]) <= 122):
-                    lowLet = lowLet + 1
-                elif(ord(passw[pos]) >= 65 and ord(passw[pos]) <= 90):
-                    upLet = upLet + 1
-                elif passw[pos].isdigit():
-                    num = num + 1
-                elif (ord(passw[pos]) == 44 or ord(passw[pos]) == 46 or ord(passw[pos]) == 35 or ord(passw[pos]) == 40):
-                    specLet = specLet + 1
+            while pos < len(string):
+                if isdigit(string[pos]):
+                    return true
+                else:
+                    pos = pos + 1
 
-                pos = pos + 1
+            return false
 
-            print(lowLet, upLet, specLet, num)
-            if(upLet == 3 or lowLet > 1) and (specLet > 1 or num > 0):
-               return True
-            else:
-                return False
-# Task 6 (Socket)
-    def connectTcp(self, host = "", port = 0):
-
+    # Task 6 (Socket)
+    def connectTcp(self, host="", port=0):
 
         try:
             self.host = socket.gethostbyname(host)
@@ -134,13 +100,10 @@ class Assignment2:
 
         self.sock.close()
 
+
 a = Assignment2()
 retval = a.connectTcp("www.google.com", 8)
 if retval:
     print("Connection established correctly")
 else:
     print("Some error")
-
-
-
-
