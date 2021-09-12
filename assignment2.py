@@ -29,7 +29,7 @@ class Assignment2:
 
         number = currentYear - self.age
         self.birthYear = str(number)
-        print("Your birth year is {0}\n".format(self.birthYear))
+        print("Your birth year is {0}\n\n".format(self.birthYear))
 
     # Task 3 (List)
 
