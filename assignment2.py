@@ -76,7 +76,7 @@ class Assignment2:
         elif checkLower.islower() == False:
             return False
         else:
-            pos = 1
+            pos = 0
             while pos < len(string):
                 if isdigit(string[pos]):
                     return True
