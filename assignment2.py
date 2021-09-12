@@ -66,7 +66,7 @@ class Assignment2:
         return returnString
 
     # Task 5 (Loop and Conditional statements)
-
+    @staticmethod
     def checkGoodString(self, string=""):
 
         if len(string) < 9:
@@ -82,13 +82,14 @@ class Assignment2:
         return False
 
     # Task 6 (Socket)
+    @staticmethod
     def connectTcp(self, host="", port=0):
 
         try:
             self.host = socket.gethostbyname(host)
-            #print("Good Host")
+            print("Good Host")
         except:
-            #print("Could not connect to host")
+            print("Could not connect to host")
             return False
         try:
             self.sock.connect((host, port))
@@ -100,12 +101,15 @@ class Assignment2:
 
 
 a = Assignment2(15)
+
+print("Task 5")
 ret = a.checkGoodString("Foobar0more")
 print(ret)
 
 ret = a.checkGoodString("foobar0more")
 print(ret)
 
+print("Task 6")
 retval = a.connectTcp("www.google.com", 180)
 
 if retval:
