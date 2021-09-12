@@ -69,11 +69,11 @@ class Assignment2:
 
     def checkGoodString(self, string=""):
 
-        checkLower = string[0]
+
 
         if len(string) < 9:
             return False
-        elif checkLower.islower() == False:
+        elif not string[0].islower():
             return False
         else:
             pos = 0
