@@ -13,7 +13,7 @@ class Assignment2:
     currentYear = ""
 
     n = 0
-    modString = ""
+
     host = ""
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -100,10 +100,3 @@ class Assignment2:
 
         self.sock.close()
 
-
-a = Assignment2()
-retval = a.connectTcp("www.google.com", 8)
-if retval:
-    print("Connection established correctly")
-else:
-    print("Some error")
