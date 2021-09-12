@@ -10,7 +10,7 @@ import argparse
 
 class Assignment2:
     age = 0
-    currentYear = ""
+    birthYear = ""
     n = 0
     host = ""
 
@@ -24,9 +24,9 @@ class Assignment2:
 
     # Task 2 (birthYear)
 
-    def tellBirthYear(self, currentYear=0):
+    def tellBirthYear(self, birthYear=0):
 
-        self.currentYear = currentYear
+        self.birthYear = birthYear
         birthYear = str(currentYear)
         print("Your birth year is {0}!".format(self.birthYear))
 
@@ -37,7 +37,7 @@ class Assignment2:
         result_list = []
         aniversary = 1
 
-        while aniversary < len(self.age):
+        while aniversary < self.age:
             if aniversary % n == 0:
                 result_list.append(aniversary)
             aniversary = aniversary + 1
