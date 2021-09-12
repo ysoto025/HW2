@@ -86,9 +86,9 @@ class Assignment2:
 
         try:
             self.host = socket.gethostbyname(host)
-            print("Good Host")
+            #print("Good Host")
         except:
-            print("Could not connect to host")
+            #print("Could not connect to host")
             return False
         try:
             self.sock.connect((host, port))
@@ -98,9 +98,19 @@ class Assignment2:
 
         self.sock.close()
 
+
 a = Assignment2(15)
 ret = a.checkGoodString("Foobar0more")
 print(ret)
 
 ret = a.checkGoodString("foobar0more")
 print(ret)
+
+retval = a.connectTcp("www.google.com", 180)
+
+if retval:
+    print("Connection established correctly")
+else:
+    print("Some error")
+
+print(retval)
